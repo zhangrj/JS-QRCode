@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>二维码生成器</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<script type="text/javascript" src="assets/js/qrcode.min.js"></script>
+</head>
+
+<body>
+<!-- 内容区域 -->
+<div class="qrcode-generator"> 
+  
+  <!-- 参数填写区域 -->
+  <div class="qrcode-parameter"> 
+    
+    <!-- 白色背景区 -->
+    <div class="area-white-background">
+      <div class="title-row">
+        <h1>二维码生成器</h1>
+      </div>
+      <div class="parameter-row">
+        <label> <span>文本/网址</span>
+          <input type="text" id="text">
+        </label>
+      </div>
+      <div class="parameter-row">
+        <label> <span>大小/px</span>
+          <input type="number" id="qrcode-size" min="10" max="1000" step="10" value="100">
+        </label>
+      </div>
+      <div class="parameter-row">
+        <button type="button" onClick="generateCode()">生成</button>
+      </div>
+    </div>
+    <!-- 白色背景区结束 -->
+    
+    <!-- 页脚区 -->
+    <footer> 
+    &copy;2017-代码的荣耀:<a href="http://www.icoder.top/">http://www.icoder.top/</a>——版权所有 
+    </footer>
+    <!-- 页脚区结束 -->
+    
+  </div>
+  <!-- 参数填写区域结束 -->
+  
+  <!-- 二维码生成区域 -->
+  <div class="image-area" id="image-qrcode"> </div>
+  
+</div>
+<!-- 内容区域结束 -->
+
+<script type="text/javascript">	
+function generateCode () {	
+	//清空二维码区域，否则重复点击会多次生成
+	document.getElementById("image-qrcode").innerHTML="";
+	
+	var elText = document.getElementById("text");
+	var qrcode_size=document.getElementById("qrcode-size");
+	
+	if (!elText.value) {
+		alert("请填写文本/网址内容");
+		elText.focus();
+		return;
+	}
+	
+	if (!qrcode_size.value) {
+		alert("请填写尺寸参数");
+		qrcode_size.focus();
+		return;
+	}
+	
+	var qrcode = new QRCode(document.getElementById("image-qrcode"), {
+	text:elText.value,
+	width : qrcode_size.value,
+	height : qrcode_size.value,
+  //容错能力设为H档次，最高
+  correctLevel : QRCode.CorrectLevel.H 
+    });
+	
+	//生成二维码
+	qrcode.makeCode();
+}	
+</script>
+
+</body>
+</html>

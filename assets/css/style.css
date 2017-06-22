@@ -1,0 +1,135 @@
+html {
+	background-color: #f3f3f3;
+}
+
+footer a {
+	text-decoration: none;
+}
+
+.qrcode-generator {
+	max-width: 1000px;
+	width: 100%;
+	margin: 0 auto;
+	font: bold 14px sans-serif;
+	text-align: center;
+}
+
+.qrcode-parameter {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 30px;
+	text-align: center;
+}
+
+.qrcode-parameter .area-white-background {
+	width: 570px;
+	box-sizing: border-box;
+	background-color: #ffffff;
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+	padding: 60px 80px;
+	margin-bottom: 32px;
+}
+
+.qrcode-parameter .parameter-row {
+	text-align: left;
+	margin-bottom: 23px;
+}
+
+.qrcode-parameter .title-row {
+	text-align: center;
+	margin-bottom: 60px;
+}
+
+.qrcode-parameter h1 {
+	display: inline-block;
+	box-sizing: border-box;
+	color: #4c565e;
+	font-size: 24px;
+	padding: 0 30px 15px;
+	border-bottom: 2px solid #6caee0;
+	margin: 0;
+}
+
+.qrcode-parameter .parameter-row > label span {
+	display: inline-block;
+	box-sizing: border-box;
+	color: #5f5f5f;
+	width: 125px;
+	text-align: right;
+	padding-right: 25px;
+}
+
+.qrcode-parameter input {
+	color: #5f5f5f;
+	box-sizing: border-box;
+	width: 230px;
+	box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+	padding: 12px 18px;
+	border: 1px solid #dbdbdb;
+}
+
+.qrcode-parameter button {
+	display: block;
+	border-radius: 2px;
+	background-color: #6caee0;
+	color: #ffffff;
+	font-weight: bold;
+	box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+	padding: 15px 35px;
+	border: 0;
+	margin: 55px auto 0;
+	cursor: pointer;
+}
+
+.qrcode-parameter button:hover {
+	background-color: blue;
+}
+
+.image-area {
+	display: inline-block;
+	box-sizing: border-box;
+	vertical-align: top;
+	text-align: center;
+	margin-top: 70px;
+}
+
+/*响应式设计*/
+
+@media (max-width: 900px) {
+	
+.qrcode-generator {
+	margin: 20px auto;
+}
+	
+.qrcode-parameter {
+	position: relative;
+	display: block;
+	margin: 0 0 50px;
+}
+	
+.qrcode-parameter .area-white-background {
+	margin: 0 auto 32px;
+}
+	
+.image-area {
+	margin-top: 60px;
+}
+	
+}
+
+@media (max-width: 600px) {
+	
+.qrcode-parameter .area-white-background {
+	width: 300px;
+	padding-left: 35px;
+	padding-right: 35px;
+}
+	
+.qrcode-parameter .parameter-row > label span {
+	display: block;
+	text-align: left;
+	padding: 0 0 10px;
+}
+	
+}
